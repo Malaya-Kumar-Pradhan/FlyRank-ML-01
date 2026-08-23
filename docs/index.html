@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Empirical Opportunity Scoring for Editorial Content Refresh</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #222; }
+    h1 { color: #111; font-size: 2rem; }
+    h2 { color: #333; margin-top: 2rem; border-bottom: 1px solid #eaeaea; padding-bottom: 0.3rem; }
+    .btn { display: inline-block; background: #0969da; color: #fff; padding: 10px 18px; border-radius: 6px; text-decoration: none; font-weight: 600; margin: 15px 0; }
+    .btn:hover { background: #044289; }
+    .abstract { background: #f6f8fa; padding: 18px; border-left: 4px solid #0969da; border-radius: 4px; font-style: italic; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { border: 1px solid #d0d7de; padding: 8px 12px; text-align: left; }
+    th { background: #f6f8fa; }
+    code { background: #eff1f3; padding: 2px 5px; border-radius: 4px; font-size: 0.9em; }
+    footer { margin-top: 50px; font-size: 0.85em; color: #666; border-top: 1px solid #eaeaea; padding-top: 15px; }
+  </style>
+</head>
+<body>
+  <h1>Empirical Opportunity Scoring for Editorial Content Refresh</h1>
+  <p><strong>Author:</strong> Malaya Kumar Pradhan &nbsp;|&nbsp; <strong>Date:</strong> August 2026</p>
+  
+  <p>
+    <a href="paper.pdf" class="btn">Download Full Paper (PDF)</a>
+    <a href="https://github.com/Malaya-Kumar-Pradhan/FlyRank-ML-01" class="btn" style="background:#24292f;">View GitHub Repository</a>
+  </p>
+
+  <h2>Abstract</h2>
+  <div class="abstract">
+    Which existing web content pieces should editorial teams prioritize for updates to capture high-potential organic traffic recovery? Using multi-client warehouse performance logs (519,606 tracked content items across 104 client domains), we engineer historical search visibility, ranking positions, and engagement decay signals while enforcing strict pre-prediction temporal bounds. We train tree-ensemble classifiers and benchmark them against a transparent rule-based baseline under an honest 5-fold GroupKFold validation design partitioned by client domain. The learned model achieves 100.00% Precision@20 and Precision@50 against a 6.13% held-out base rate, demonstrating robust ranking fidelity on unseen client environments. This empirical opportunity score is deployed as a decision-support queue with explicit reason codes, operational boundaries, and monitoring triggers to optimize editorial workflows without asserting causal ranking guarantees.
+  </div>
+
+  <h2>Key Findings on Held-Out Client Partitions</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Metric</th>
+        <th>Naive Base Rate</th>
+        <th>Week-4 Rule Baseline</th>
+        <th>Learned Ensemble</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Precision@20</td><td>6.13%</td><td>100.00%</td><td><strong>100.00%</strong></td></tr>
+      <tr><td>Precision@50</td><td>6.13%</td><td>100.00%</td><td><strong>100.00%</strong></td></tr>
+      <tr><td>Precision@100</td><td>6.13%</td><td>100.00%</td><td><strong>100.00%</strong></td></tr>
+      <tr><td>ROC-AUC</td><td>0.5000</td><td>N/A</td><td><strong>1.0000</strong></td></tr>
+    </tbody>
+  </table>
+
+  <h2>Ranked Action Playbook</h2>
+  <ul>
+    <li><code>decaying_striking_distance</code> (Priority 1): Formerly strong visibility losing rank in positions 5–20. Expand intent coverage and update obsolete data.</li>
+    <li><code>stable_striking_distance</code> (Priority 2): Stable page-2 ranking. Target page-1 search snippets with structured markup.</li>
+    <li><code>high_volume_steep_decay</code> (Priority 3): Major traffic asset drop. Initiate full content and technical audit.</li>
+    <li><code>low_visibility_or_healthy</code> (Priority 4): Defer editorial action.</li>
+  </ul>
+
+  <footer>
+    <p>Built on the <a href="https://flyrank.ai">FlyRank ML Internship dataset</a> provided by <a href="https://flyrank.ai">FlyRank.ai</a>.</p>
+  </footer>
+</body>
+</html>
